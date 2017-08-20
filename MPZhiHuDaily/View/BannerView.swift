@@ -18,6 +18,7 @@ class BannerView: UIView {
     fileprivate let itemH: CGFloat = 200
     let imgUrlArr = Variable([storyModel]())
     let dispose = DisposeBag()
+    var offY = Variable(0.0)
     
     init() {
         super.init(frame: CGRect.zero)
@@ -42,6 +43,7 @@ class BannerView: UIView {
         let ID = "BannerCellID"
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: ID)
         
+        // 给collectionView的cell赋值
         imgUrlArr
         .asObservable()
             .bind(to: collectionView.rx.items(cellIdentifier: ID, cellType: BannerCell.self)) {
@@ -49,6 +51,8 @@ class BannerView: UIView {
                 cell.model = model
                 
         }.addDisposableTo(dispose)
+        
+        // 设置pageControl的数量
         imgUrlArr
             .asObservable()
             .subscribe (onNext: { models in
@@ -56,6 +60,17 @@ class BannerView: UIView {
                 self.collectionView.contentOffset.x = screenW
         }).addDisposableTo(dispose)
         
+        // 监听滚动，设置图片的拉伸效果
+        offY
+        .asObservable()
+            .subscribe(onNext: {
+                offY in
+                self.collectionView.visibleCells.forEach({ (cell) in
+                    let myCell = cell as! BannerCell
+                    myCell.imgView.frame.origin.y = CGFloat.init(offY)
+                    myCell.imgView.frame.size.height = 200 - CGFloat.init(offY)
+                })
+            }).addDisposableTo(dispose)
         collectionView.rx.setDelegate(self).addDisposableTo(dispose)
     }
     
@@ -69,6 +84,7 @@ class BannerView: UIView {
         view.isPagingEnabled = true
         view.backgroundColor = UIColor.white
         view.showsHorizontalScrollIndicator = false
+        view.clipsToBounds = false
         return view
     }()
     
@@ -103,6 +119,7 @@ class BannerCell: UICollectionViewCell {
         }
     }
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -127,7 +144,7 @@ class BannerCell: UICollectionViewCell {
         }
     }
     
-    fileprivate lazy var imgView: UIImageView = {
+    lazy var imgView: UIImageView = {
         let iv = UIImageView()
         return iv
     }()

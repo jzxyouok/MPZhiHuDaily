@@ -130,6 +130,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         barImg.alpha = scrollView.contentOffset.y / 200
+        bannerView.offY.value = Double(scrollView.contentOffset.y)
     }
 }
 
