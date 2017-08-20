@@ -47,7 +47,11 @@ class HomeViewController: UITabBarController {
             })
             self.menuVC.showView = false
         }).addDisposableTo(disposeBag)
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
+    
+
     
     fileprivate func setupUI() {
         self.view.backgroundColor = UIColor.white

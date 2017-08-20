@@ -19,6 +19,7 @@
 		F5E0DE7F1F492FBA00C9E175 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DE7D1F492FBA00C9E175 /* MenuViewController.swift */; };
 		F5E0DE851F492FDB00C9E175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DE831F492FDB00C9E175 /* AppDelegate.swift */; };
 		F5E0DE861F492FDB00C9E175 /* ToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DE841F492FDB00C9E175 /* ToolExtension.swift */; };
+		F5E0DE881F4945A700C9E175 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0DE871F4945A700C9E175 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		F5E0DE7D1F492FBA00C9E175 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F5E0DE831F492FDB00C9E175 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E0DE841F492FDB00C9E175 /* ToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolExtension.swift; sourceTree = "<group>"; };
+		F5E0DE871F4945A700C9E175 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC5D753C8158E2A162EF9CC /* Pods-MPZhiHuDailyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPZhiHuDailyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPZhiHuDailyTests/Pods-MPZhiHuDailyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 			children = (
 				F5E0DE7C1F492FBA00C9E175 /* HomeViewController.swift */,
 				F5E0DE7D1F492FBA00C9E175 /* MenuViewController.swift */,
+				F5E0DE871F4945A700C9E175 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				F5E0DE861F492FDB00C9E175 /* ToolExtension.swift in Sources */,
 				F5E0DE7E1F492FBA00C9E175 /* HomeViewController.swift in Sources */,
 				F5E0DE7F1F492FBA00C9E175 /* MenuViewController.swift in Sources */,
+				F5E0DE881F4945A700C9E175 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

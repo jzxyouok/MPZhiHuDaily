@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="-1270" y="-329"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="vuf-aT-MVe">
             <objects>
-                <tabBarController id="eEu-s5-X6g" customClass="HomeViewController" customModule="MPZhiHuDaily" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="eEu-s5-X6g" customClass="MainViewController" customModule="MPZhiHuDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="I1Z-Sw-MUV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
