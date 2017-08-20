@@ -30,8 +30,13 @@ class BannerView: UIView {
     
     fileprivate func setupUI() {
         addSubview(collectionView)
+        addSubview(pageControl)
         collectionView.snp.makeConstraints { (make) in
             make.left.right.top.bottom.equalToSuperview()
+        }
+        pageControl.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(0)
         }
         
         let ID = "BannerCellID"
@@ -42,7 +47,16 @@ class BannerView: UIView {
             .bind(to: collectionView.rx.items(cellIdentifier: ID, cellType: BannerCell.self)) {
                 row, model, cell in
                 cell.model = model
+                
         }.addDisposableTo(dispose)
+        imgUrlArr
+            .asObservable()
+            .subscribe (onNext: { models in
+            self.pageControl.numberOfPages = models.count - 2
+                self.collectionView.contentOffset.x = screenW
+        }).addDisposableTo(dispose)
+        
+        collectionView.rx.setDelegate(self).addDisposableTo(dispose)
     }
     
     fileprivate lazy var collectionView: UICollectionView = {
@@ -57,6 +71,25 @@ class BannerView: UIView {
         view.showsHorizontalScrollIndicator = false
         return view
     }()
+    
+    fileprivate lazy var pageControl: UIPageControl = {
+        let page = UIPageControl()
+        return page
+    }()
+}
+
+extension BannerView: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 滚动最后一个图片时，回到第一张图片
+        if scrollView.contentOffset.x == CGFloat(imgUrlArr.value.count - 1) * screenW {
+            scrollView.contentOffset.x = screenW
+        }else if scrollView.contentOffset.x == 0 {
+            // 滚动到第一张图片时，回到最后一张图片
+            scrollView.contentOffset.x = CGFloat(imgUrlArr.value.count - 2) * screenW
+        }
+        let index = Int(scrollView.contentOffset.x / screenW) - 1
+        self.pageControl.currentPage = index
+    }
 }
 
 class BannerCell: UICollectionViewCell {
@@ -90,7 +123,7 @@ class BannerCell: UICollectionViewCell {
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(-10)
-            make.bottom.equalToSuperview().offset(100)
+            make.bottom.equalToSuperview().offset(-20)
         }
     }
     
@@ -102,7 +135,7 @@ class BannerCell: UICollectionViewCell {
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
+        label.textColor = UIColor.white
         label.numberOfLines = 2
         return label
     }()
