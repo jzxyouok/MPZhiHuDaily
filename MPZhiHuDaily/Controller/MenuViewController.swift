@@ -36,7 +36,8 @@ class MenuViewController: UIViewController {
     func showMenuView() {
         let view = UIApplication.shared.keyWindow?.subviews.first
         let menuView = UIApplication.shared.keyWindow?.subviews.last
-        UIApplication.shared.keyWindow?.bringSubview(toFront: (UIApplication.shared.keyWindow?.subviews[1])!)
+        UIApplication.shared.keyWindow?.bringSubview(toFront: (menuView)!)
+
         UIView.animate(withDuration: 0.5, animations: {
             view?.transform = CGAffineTransform.init(translationX: 225, y: 0)
             menuView?.transform = (view?.transform)!
@@ -47,7 +48,8 @@ class MenuViewController: UIViewController {
     func hideMenuView() {
         let view = UIApplication.shared.keyWindow?.subviews.first
         let menuView = UIApplication.shared.keyWindow?.subviews.last
-        UIApplication.shared.keyWindow?.bringSubview(toFront: (UIApplication.shared.keyWindow?.subviews[1])!)
+
+        UIApplication.shared.keyWindow?.bringSubview(toFront: (menuView)!)
         UIView.animate(withDuration: 0.5, animations: {
             view?.transform = CGAffineTransform.init(translationX: 0, y: 0)
             menuView?.transform = (view?.transform)!

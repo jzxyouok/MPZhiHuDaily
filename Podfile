@@ -13,6 +13,7 @@ pod 'RxCocoa',    '~> 3.0'
 pod 'RxDataSources', '~> 1.0'
 pod 'Then', '~> 2.1.0'
 pod 'SwiftDate', '~> 4.0.11'
+pod 'SnapKit', '~> 3.0.0'
 
   # Pods for MPZhiHuDaily
 
@@ -28,6 +29,7 @@ pod 'RxCocoa',    '~> 3.0'
 pod 'RxDataSources', '~> 1.0'
 pod 'Then', '~> 2.1.0'
 pod 'SwiftDate', '~> 4.0.11'
+pod 'SnapKit', '~> 3.0.0'
   end
 
   target 'MPZhiHuDailyUITests' do
@@ -42,6 +44,7 @@ pod 'RxCocoa',    '~> 3.0'
 pod 'RxDataSources', '~> 1.0'
 pod 'Then', '~> 2.1.0'
 pod 'SwiftDate', '~> 4.0.11'
+pod 'SnapKit', '~> 3.0.0'
   end
 
 end

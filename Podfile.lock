@@ -1,23 +1,24 @@
 PODS:
-  - Alamofire (4.4.0)
-  - HandyJSON (1.6.1)
-  - Kingfisher (3.5.2)
-  - Moya (8.0.3):
-    - Moya/Core (= 8.0.3)
-  - Moya/Core (8.0.3):
+  - Alamofire (4.5.0)
+  - HandyJSON (1.7.2)
+  - Kingfisher (3.11.0)
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
+  - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.3):
+  - Moya/RxSwift (8.0.5):
     - Moya/Core
     - RxSwift (~> 3.0)
-  - Result (3.2.1)
-  - RxCocoa (3.3.1):
-    - RxSwift (~> 3.3)
-  - RxDataSources (1.0.3):
+  - Result (3.2.3)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxDataSources (1.0.4):
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
-  - RxSwift (3.3.1)
-  - SwiftDate (4.0.13)
+  - RxSwift (3.6.1)
+  - SnapKit (3.0.2)
+  - SwiftDate (4.0.14)
   - Then (2.1.0)
 
 DEPENDENCIES:
@@ -28,21 +29,23 @@ DEPENDENCIES:
   - RxCocoa (~> 3.0)
   - RxDataSources (~> 1.0)
   - RxSwift (~> 3.0)
+  - SnapKit (~> 3.0.0)
   - SwiftDate (~> 4.0.11)
   - Then (~> 2.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  HandyJSON: dcc98115467462a4749db81bc8a9052607600bdf
-  Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
-  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
-  RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
-  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
-  SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxDataSources: b3389acc5fe2eefb8fcd81a2b76a876ad08bc82a
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftDate: 4ef029fd3117cc287fe642658b9aca2217628976
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
 
-PODFILE CHECKSUM: d4398580ba93db61e500c4ed06795a17cc806058
+PODFILE CHECKSUM: 56550ca2fbdd8352d90f69c12f8ab9fafa269f06
 
 COCOAPODS: 1.2.0
