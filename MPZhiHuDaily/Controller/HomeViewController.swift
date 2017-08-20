@@ -42,6 +42,9 @@ class HomeViewController: UITabBarController {
         
         self.tabBarController?.tabBar.isHidden = true
         
+        bannerView.frame = CGRect(x: 0, y: 0, width: screenW, height: 200)
+        tableView.tableHeaderView = bannerView
+        
         loadData()
     }
     
@@ -81,7 +84,7 @@ class HomeViewController: UITabBarController {
                 var arr = model.top_stories!
                 arr.insert(arr.last!, at: 0)
                 arr.append(arr[1])
-                print(arr)
+                self.bannerView.imgUrlArr.value = arr
             })
         .addDisposableTo(disposeBag)
     }
@@ -103,6 +106,10 @@ class HomeViewController: UITabBarController {
         tb.dataSource = self
         tb.delegate = self
         return tb
+    }()
+    fileprivate lazy var bannerView: BannerView = {
+        let view = BannerView()
+        return view
     }()
 }
 
